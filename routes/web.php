@@ -17,7 +17,6 @@ Route::get('/', function () {
 Route::get('/download', 'PDFController@save');
 // Route::get('/download', function() {
 //     $pdf = App::make('dompdf.wrapper');
-//     $data ="hi";
 //     $pdf->loadView('welcome');
-//     return $pdf->download('sertif.pdf');
+//     return $pdf->setPaper([0,0,900,665])->download('sertif.pdf');
 // });

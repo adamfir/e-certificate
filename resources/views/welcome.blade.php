@@ -12,6 +12,7 @@
 
         <!-- Styles -->
         <style>
+            @page { margin: 0px; }
             @font-face {
                 font-family: Nautilus;
                 src: url(font/Nautilus.otf);
@@ -20,7 +21,9 @@
                 margin: 0px;
             }
             .container {
-                position: relative;
+                position: absolute;
+                margin: 0px;
+                padding: 0px;
             }
             /* html, body {
                 background-image: url("img/background-polos.png");
@@ -58,7 +61,8 @@
                 font-size:38pt; 
                 font-family:Nautilus; 
                 color:#1E325C;
-                margin: 0px
+                margin: 0px;
+                text-align: center
             }
             .completedPosition{
                 position: absolute;
@@ -71,6 +75,7 @@
                 font-size:19pt; 
                 font-family:Calibri;
                 margin: 0px;
+                text-align: center
             }
             .trainingPosition{
                 position: absolute;
@@ -97,6 +102,7 @@
                 font-size:18pt; 
                 font-family:Calibri;
                 margin: 0px;
+                text-align: center
             }
             .TTD1Position{
                 position: absolute;
@@ -114,6 +120,7 @@
                 font-size:18pt; 
                 font-family:Calibri;
                 margin: 0px;
+                text-align: center
             }
             td {
                 border: 1px solid transparent;
