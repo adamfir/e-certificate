@@ -14,8 +14,9 @@
         <style>
             @page { margin: 0px; }
             @font-face {
-                font-family: Nautilus;
-                src: url(font/Nautilus.otf);
+                font-family: 'Nautilus';
+                src: url("{{asset('fonts/Nautilus.ttf')}}") format('truetype');
+                font-size: normal;
             }
             body{
                 margin: 0px;
@@ -59,7 +60,7 @@
             }
             #nameContent{
                 font-size:38pt; 
-                font-family:Nautilus; 
+                font-family:'Nautilus'; 
                 color:#1E325C;
                 margin: 0px;
                 text-align: center
