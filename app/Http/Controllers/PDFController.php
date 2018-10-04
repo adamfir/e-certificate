@@ -27,7 +27,10 @@ class PDFController extends Controller
 
      public function save(){
         // $pdf = App::make('dompdf.wrapper');
-        $pdf = PDF::loadView('welcome');
+        $pdf = PDF::setOptions([
+            'logOutputFile' => storage_path('logs/log.htm'),
+            'tempDir' => storage_path('logs/')
+        ])->loadView('welcome');
         // $pdf->loadView('welcome');
         return $pdf->setPaper([0,0,900,665])->download('sertif.pdf');
      }
