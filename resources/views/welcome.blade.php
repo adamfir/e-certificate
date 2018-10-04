@@ -42,7 +42,7 @@
                 /* width: 500px; */
                 position: absolute;
                 top: 230px;
-                left: 500px;
+                left: 67px;
                 /* padding: 200px 0px 0px 492.5px;  */
                 text-align: center
             }
@@ -54,7 +54,7 @@
             .namePosition{
                 position: absolute;
                 top: 285px;
-                left: 165px;
+                left: 67px;
                 /* padding: 275px 0px 0px 165px; */
                 text-align: center
             }
@@ -68,9 +68,10 @@
             .completedPosition{
                 position: absolute;
                 top: 372px;
-                left: 468px;
+                left: 67px;
                 /* padding: 365px 0px 0px 460px; */
-                text-align: center
+                text-align: center;
+                line-height: 1.35;
             }
             #completedContent{
                 font-size:19pt; 
@@ -103,7 +104,8 @@
                 font-size:18pt; 
                 font-family:Calibri;
                 margin: 0px;
-                text-align: center
+                text-align: center;
+                line-height: 1.35;
             }
             .TTD1Position{
                 position: absolute;
@@ -135,24 +137,27 @@
                 <p style="margin: 0px">cc:001/1/PM/IICT/X/2018</p>
             </div>
             <div class="certifyPosition">
-                <table style="width:250px">
+                <table style="width:1110px">
                     <td>
                         <p id="certifyContent"><i>This is to certify that</i></p>
                     </td>
                 </table>
             </div>
             <div class="namePosition">
-                <table style="width:900px;">
+                <table style="width:1110px;">
                     <td>
-                        <p id="nameContent">Neilla Nurilla</p>
+                        <p id="nameContent">Adam Firdaus Mangku Bumi Langit Alam Sekitarnya</p>
                     </td>
                 </table>
             </div>
             <div class="completedPosition">
-                <table style="width:315px">
+                <table style="width:1110px">
                     <td>
                         <p id="completedContent">
                             has successfully completed
+                            <br><b><i>Training on</i></b>
+                            <br><b><i>Technique and Marketing Skills Improvement for Field Staff of Agrochemical Industries</i></b>
+                            <br>Bogor - Indonesia, October 26-27, 2018 
                         </p>
                     </td>
                 </table>
@@ -161,7 +166,7 @@
                 <table style="width:1110px">
                     <td>
                         <p id="trainingContent">
-                            <b><i>Training on</i></b>
+                            
                         </p>
                     </td>
                 </table>
@@ -170,7 +175,7 @@
                 <table style="width:1110px">
                     <td>
                         <p id="trainingContent">
-                            <b><i>Technique and Marketing Skills Improvement for Field Staff of Agrochemical Industries</i></b>
+                            
                         </p>
                     </td>
                 </table>
@@ -179,7 +184,7 @@
                 <table style="width:1110px">
                     <td>
                         <p id="trainingContent">
-                            Bogor - Indonesia, October 26-27, 2018 
+                            
                         </p>
                     </td>
                 </table>
