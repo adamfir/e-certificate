@@ -69,12 +69,12 @@ class PDFController extends Controller
             $date = date('F j, Y');
         }
         $kategori = KategoriTraining::where('id', '=', $training->kategori_id)->get()->first();
-        // dd($kategori);
-        // return view('certificate-layout', compact('training','pesertas','penandatangans'));
+        // dd(sizeof($penandatangans));
+        // return view('certificate-layout', compact('training','pesertas','penandatangans', 'date', 'kategori'));
         $pdf = PDF::setOptions([
             'logOutputFile' => storage_path('logs/log.htm'),
             'tempDir' => storage_path('logs/')
         ])->loadView('certificate-layout', compact('training','pesertas','penandatangans', 'date', 'kategori'));
-        return $pdf->setPaper([0,0,900,665])->download($training->judul . ' ' . $training->tanggal_mulai.'.pdf');
+        return $pdf->setPaper([0,0,940,665])->download($training->judul . ' ' . $training->tanggal_mulai.'.pdf');
     }
 }

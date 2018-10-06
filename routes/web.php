@@ -13,12 +13,8 @@
 
 Route::get('/', 'HomeController@home');
 Route::get('/layout', function(){
-    $obj1 = new stdClass();
-    $obj1->name = "Adam Firdaus";
-    $obj2 = new stdClass();
-    $obj2->name = "Adam Firdaus 2";
-    $arr = array($obj1, $obj2);
-    return view('certificate-layout', compact('arr'));
+    $ttd = 3;
+    return view('try', compact('ttd'));
 });
 Route::post('/submit','HomeController@input')->name('submit');
 Route::get('/download/{training_id}', 'PDFController@save')->name('download');

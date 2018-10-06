@@ -133,10 +133,34 @@
                 left: 53px;
                 text-align: center;
             }
-            .TTD2Position{
+            .TTD2Position1{
+                position: absolute;
+                top: 710px;
+                left: 53px;
+                text-align: center;
+            }
+            .TTD2Position2{
                 position: absolute;
                 top: 710px;
                 left: 687px;
+                text-align: center;
+            }
+            .TTD3Position1 {
+                position: absolute;
+                top: 710px;
+                left: 0px;
+                text-align: center;
+            }
+            .TTD3Position2 {
+                position: absolute;
+                top: 710px;
+                left: 416px;
+                text-align: center;
+            }
+            .TTD3Position3 {
+                position: absolute;
+                top: 710px;
+                left: 832px;
                 text-align: center;
             }
             #TTDContent{
@@ -191,7 +215,83 @@
                         </td>
                     </table>
                 </div>
+                @if (sizeof($penandatangans) == 1)
                 <div class="TTD1Position">
+                    <table style="width:1110px">
+                        <td>
+                            <p id="TTDContent">
+                                <b>{{$penandatangans[0]->nama}}</b><br>
+                                <i style="font-size:16pt">{{$penandatangans[0]->jabatan}} of<br>
+                                {{$penandatangans[0]->instansi}}
+                                </i>
+                            </p>
+                        </td>
+                    </table>
+                </div>
+                @elseif(sizeof($penandatangans) == 2)
+                <div class="TTD2Position1">
+                    <table style="width:515px">
+                        <td>
+                            <p id="TTDContent">
+                                <b>{{$penandatangans[0]->nama}}</b><br>
+                                <i style="font-size:16pt">{{$penandatangans[0]->jabatan}} of<br>
+                                {{$penandatangans[0]->instansi}}
+                                </i>
+                            </p>
+                        </td>
+                    </table>
+                </div>
+                <div class="TTD2Position2">
+                    <table style="width:515px">
+                        <td>
+                            <p id="TTDContent">
+                                <b>{{$penandatangans[1]->nama}}</b><br>
+                                <i style="font-size:16pt">{{$penandatangans[1]->jabatan}} of<br>
+                                {{$penandatangans[1]->instansi}}
+                                </i>
+                            </p>
+                        </td>
+                    </table>
+                </div>
+                @elseif(sizeof($penandatangans) == 3)
+                <div class="TTD3Position1">
+                    <table style="width:416px">
+                        <td>
+                            <p id="TTDContent">
+                                <b>{{$penandatangans[0]->nama}}</b><br>
+                                <i style="font-size:16pt">{{$penandatangans[0]->jabatan}} of<br>
+                                {{$penandatangans[0]->instansi}}
+                                </i>
+                            </p>
+                        </td>
+                    </table>
+                </div>
+                <div class="TTD3Position2">
+                    <table style="width:416px">
+                        <td>
+                            <p id="TTDContent">
+                                <b>{{$penandatangans[1]->nama}}</b><br>
+                                <i style="font-size:16pt">{{$penandatangans[1]->jabatan}} of<br>
+                                {{$penandatangans[1]->instansi}}
+                                </i>
+                            </p>
+                        </td>
+                    </table>
+                </div>
+                <div class="TTD3Position3">
+                    <table style="width:416px">
+                        <td>
+                            <p id="TTDContent">
+                                <b>{{$penandatangans[2]->nama}}</b><br>
+                                <i style="font-size:16pt">{{$penandatangans[2]->jabatan}} of<br>
+                                {{$penandatangans[2]->instansi}}
+                                </i>
+                            </p>
+                        </td>
+                    </table>
+                </div>
+                @endif
+                {{-- <div class="TTD1Position">
                     <table style="width:515px">
                         <td>
                             <p id="TTDContent">
@@ -214,10 +314,10 @@
                             </p>
                         </td>
                     </table>
-                </div>
+                </div> --}}
             </div>
             @if ($peserta != end($pesertas))
-                <div style="page-break-before: always;"></div>
+                <div style="page-break-before: always;"></div>    
             @endif
         @endforeach
     </body>
