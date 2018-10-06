@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Storage;
 use App\Training;
 use App\KategoriTraining;
 use App\Penandatangan;
@@ -34,7 +35,10 @@ class HomeController extends Controller
         $training->tanggal_mulai = $request->tanggal_mulai;
         $training->tanggal_selesai = $request->tanggal_selesai;
         if($request->hasFile('excel_data')){
-            $excel_data = Excel::toCollection(new PesertasImport, request()->file('excel_data'));
+            $path = $request->file('excel_data')->store('excel');
+            $excel_data = Excel::toCollection(new PesertasImport, $path);
+            Storage::delete($path);
+            dd($path, $excel_data);
         }
         $training->save();
         foreach ($excel_data[0] as $penandatangan){
