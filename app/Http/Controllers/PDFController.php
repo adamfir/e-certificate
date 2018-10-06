@@ -75,6 +75,6 @@ class PDFController extends Controller
             'logOutputFile' => storage_path('logs/log.htm'),
             'tempDir' => storage_path('logs/')
         ])->loadView('certificate-layout', compact('training','pesertas','penandatangans', 'date', 'kategori'));
-        return $pdf->setPaper([0,0,900,665])->download($training->judul . ' ' . $training->tanggal_mulai);
+        return $pdf->setPaper([0,0,900,665])->download($training->judul . ' ' . $training->tanggal_mulai.'.pdf');
     }
 }
