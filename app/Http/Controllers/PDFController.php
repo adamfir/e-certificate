@@ -71,7 +71,10 @@ class PDFController extends Controller
         $kategori = KategoriTraining::where('id', '=', $training->kategori_id)->get()->first();
         // dd($kategori);
         // return view('certificate-layout', compact('training','pesertas','penandatangans'));
-        $pdf = PDF::loadView('certificate-layout', compact('training','pesertas','penandatangans', 'date', 'kategori'));
-        return $pdf->setPaper([0,0,900,665])->download('sertif.pdf');
+        $pdf = PDF::setOptions([
+            'logOutputFile' => storage_path('logs/log.htm'),
+            'tempDir' => storage_path('logs/')
+        ])->loadView('certificate-layout', compact('training','pesertas','penandatangans', 'date', 'kategori'));
+        return $pdf->setPaper([0,0,900,665])->download($training->judul . ' ' . $training->tanggal_mulai);
     }
 }
