@@ -38,7 +38,7 @@ class HomeController extends Controller
             $path = $request->file('excel_data')->store('excel');
             $excel_data = Excel::toCollection(new PesertasImport, $path);
             Storage::delete($path);
-            dd($path, $excel_data);
+            // dd($path, $excel_data);
         }
         $training->save();
         foreach ($excel_data[0] as $penandatangan){
