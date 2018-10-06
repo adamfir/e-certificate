@@ -1,218 +1,114 @@
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+<head>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="E-Certificate Generator by Codepanda">
+    <meta name="author" content="Adam Firdaus">
+    <title>E-Certificate</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/custom.css" rel="stylesheet">
+    <script type="text/javascript" src="js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap-datepicker3.css"/>
+    <style>
+    </style>
+</head>
 
-        <!-- Styles -->
-        <style>
-            @page { margin: 0px; }
-            @font-face {
-                font-family: 'Nautilus';
-                src: url("{{asset('fonts/Nautilus.ttf')}}") format('truetype');
-                font-size: normal;
-            }
-            body{
-                margin: 0px;
-            }
-            .container {
-                position: absolute;
-                margin: 0px;
-                padding: 0px;
-            }
-            /* html, body {
-                background-image: url("img/background-polos.png");
-                background-repeat: no-repeat;
-                position: fixed;
-            } */
-            .nomorSurat {
-                color: #DAB96B;
-                position: absolute;
-                left: 30px;
-                top:25px;
-                /* padding: 0px 0px 0px 30px;  */
-            }
-            .certifyPosition{
-                /* width: 500px; */
-                position: absolute;
-                top: 230px;
-                left: 67px;
-                /* padding: 200px 0px 0px 492.5px;  */
-                text-align: center
-            }
-            #certifyContent{
-                font-size:19pt; 
-                font-family:"Calibri";
-                margin: 0px
-            }
-            .namePosition{
-                position: absolute;
-                top: 285px;
-                left: 67px;
-                /* padding: 275px 0px 0px 165px; */
-                text-align: center
-            }
-            #nameContent{
-                font-size:38pt; 
-                font-family:'Nautilus'; 
-                color:#1E325C;
-                margin: 0px;
-                text-align: center
-            }
-            .completedPosition{
-                position: absolute;
-                top: 372px;
-                left: 67px;
-                /* padding: 365px 0px 0px 460px; */
-                text-align: center;
-                line-height: 1.35;
-            }
-            #completedContent{
-                font-size:19pt; 
-                font-family:Calibri;
-                margin: 0px;
-                text-align: center
-            }
-            .trainingPosition{
-                position: absolute;
-                top: 408px;
-                left: 67px;
-                /* padding: 400px 0px 0px 60px; */
-                text-align: center
-            }
-            .trainingTitlePosition{
-                position: absolute;
-                top: 440px;
-                left: 67px;
-                /* padding: 432px 0px 0px 60px; */
-                text-align: center
-            }
-            .trainingLocationPosition{
-                position: absolute;
-                top: 472px;
-                left: 67px;
-                /* padding: 464px 0px 0px 60px; */
-                text-align: center
-            }
-            #trainingContent{
-                font-size:18pt; 
-                font-family:Calibri;
-                margin: 0px;
-                text-align: center;
-                line-height: 1.35;
-            }
-            .TTD1Position{
-                position: absolute;
-                top: 710px;
-                left: 53px;
-                text-align: center;
-            }
-            .TTD2Position{
-                position: absolute;
-                top: 710px;
-                left: 687px;
-                text-align: center;
-            }
-            #TTDContent{
-                font-size:18pt; 
-                font-family:Calibri;
-                margin: 0px;
-                text-align: center
-            }
-            td {
-                border: 1px solid transparent;
-            }
-        </style>
-    </head>
-    <body>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <img src="img/background-polos.png" alt="">
-            <div class="nomorSurat">
-                <p style="margin: 0px">cc:001/1/PM/IICT/X/2018</p>
-            </div>
-            <div class="certifyPosition">
-                <table style="width:1110px">
-                    <td>
-                        <p id="certifyContent"><i>This is to certify that</i></p>
-                    </td>
-                </table>
-            </div>
-            <div class="namePosition">
-                <table style="width:1110px;">
-                    <td>
-                        <p id="nameContent">Adam Firdaus Mangku Bumi Langit Alam Sekitarnya</p>
-                    </td>
-                </table>
-            </div>
-            <div class="completedPosition">
-                <table style="width:1110px">
-                    <td>
-                        <p id="completedContent">
-                            has successfully completed
-                            <br><b><i>Training on</i></b>
-                            <br><b><i>Technique and Marketing Skills Improvement for Field Staff of Agrochemical Industries</i></b>
-                            <br>Bogor - Indonesia, October 26-27, 2018 
-                        </p>
-                    </td>
-                </table>
-            </div>
-            <div class="trainingPosition">
-                <table style="width:1110px">
-                    <td>
-                        <p id="trainingContent">
-                            
-                        </p>
-                    </td>
-                </table>
-            </div>
-            <div class="trainingTitlePosition">
-                <table style="width:1110px">
-                    <td>
-                        <p id="trainingContent">
-                            
-                        </p>
-                    </td>
-                </table>
-            </div>
-            <div class="trainingLocationPosition">
-                <table style="width:1110px">
-                    <td>
-                        <p id="trainingContent">
-                            
-                        </p>
-                    </td>
-                </table>
-            </div>
-            <div class="TTD1Position">
-                <table style="width:515px">
-                    <td>
-                        <p id="TTDContent">
-                            <b>Muhammad Sigit Susanto PhD</b><br>
-                            <i style="font-size:16pt">Director of<br>
-                            PT Angin Ribut
-                            </i>
-                        </p>
-                    </td>
-                </table>
-            </div>
-            <div class="TTD2Position">
-                <table style="width:515px">
-                    <td>
-                        <p id="TTDContent">
-                            <b>Ir. Sambas Waemata</b><br>
-                            <i style="font-size:16pt">Director of<br>
-                            PT Global Scholarship Services Indonesia
-                            </i>
-                        </p>
-                    </td>
-                </table>
-            </div>
+            <a class="navbar-brand" href="/">E-Certificate</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button> {{--
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div> --}}
         </div>
-    </body>
+    </nav>
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-3">
+                <h1 class="my-4">Menu</h1>
+                <div class="list-group">
+                    <a href="#" class="list-group-item active">Input Data</a>
+                    <a href="#" class="list-group-item">Daftar Sertifikat</a>
+                    <a href="#" class="list-group-item">Data</a>
+                </div>
+            </div>
+            <!-- /.col-lg-3 -->
+
+            <div class="col-lg-9">
+                <div class="card card-outline-secondary my-4">
+                    <div class="card-header">
+                        Input Data
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            @csrf
+                            <div class="form-group">
+                                <label>Judul Sertifikat</label>
+                                <input type="text" class="form-control" placeholder="Judul Sertifikat">
+                            </div>
+                            <div class="form-group">
+                                <label>Lokasi</label>
+                                <input type="text" class="form-control" placeholder="Bogor - Indonesia">
+                            </div>
+                            <div class="form-group">
+                                <div class='input-group date' id='datetimepicker1'>
+                                    <input type='text' class="form-control" />
+                                    <span class="input-group-addon">
+                                        <span class="glyphicon glyphicon-calendar"></span>
+                                    </span>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- /.card -->
+            </div>
+            <!-- /.col-lg-9 -->
+        </div>
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#datetimepicker1').datetimepicker();
+        });
+    </script>
+</body>
+
 </html>
