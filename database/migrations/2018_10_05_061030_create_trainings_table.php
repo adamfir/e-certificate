@@ -20,6 +20,7 @@ class CreateTrainingsTable extends Migration
             $table->string('lokasi');
             $table->string('tanggal_mulai');
             $table->string('tanggal_selesai');
+            $table->string('filename')->nullable()->default(null);
             $table->timestamps();
 
             $table->foreign('kategori_id')->references('id')->on('kategori_trainings')->onDelete('cascade');

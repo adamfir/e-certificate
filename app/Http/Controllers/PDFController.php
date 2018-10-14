@@ -12,6 +12,7 @@ use App\TandaTangan;
 use App\Penandatangan;
 use App\KategoriTraining;
 use DateTime;
+use Illuminate\Support\Facades\Storage;
 
 class PDFController extends Controller
 {
@@ -39,16 +40,22 @@ class PDFController extends Controller
      * Dependencies : PHP-GD & MBString extension
      * Detail : https://github.com/dompdf/dompdf/wiki/Requirements
      */
-    public function save($training_id){
+    public function generate($training_id){
+        //mengambil data training berdasarkan ID
         $training = Training::where('id', '=', $training_id)->get()->first();
-        // dd($training);
+
+        //mengmabil data peserta yang mengikuti training
         $pesertas = Peserta::where('training_id','=',$training->id)->get();
+
+        //mengambil data penandatangan yang menandatangani sertifikat training
         $tandatangans = TandaTangan::where('training_id','=',$training->id)->get();
         $penandatangans = collect();
         foreach($tandatangans as $tandatangan){
             $penandatangan = Penandatangan::where('id', '=', $tandatangan->penandatangan_id)->get()->first();
             $penandatangans->push($penandatangan);
         }
+
+        // Membuat format tanggal untuk ditampilkan pada sertifikat
         $date = new DateTime();
         $date1 = new DateTime($training->tanggal_mulai);
         $date2 = new DateTime($training->tanggal_selesai);
@@ -68,13 +75,24 @@ class PDFController extends Controller
         else{
             $date = date('F j, Y');
         }
+        
+        // Mengambil data kategori training untuk training ini
         $kategori = KategoriTraining::where('id', '=', $training->kategori_id)->get()->first();
-        // dd(sizeof($penandatangans));
-        // return view('certificate-layout', compact('training','pesertas','penandatangans', 'date', 'kategori'));
+
+        // Men-genertae PDF dan menyimpannya ke storage dengan nama file yang unique sesuai training
         $pdf = PDF::setOptions([
             'logOutputFile' => storage_path('logs/log.htm'),
             'tempDir' => storage_path('logs/')
-        ])->loadView('certificate-layout', compact('training','pesertas','penandatangans', 'date', 'kategori'));
-        return $pdf->setPaper([0,0,940,665])->download($training->judul . ' ' . $training->tanggal_mulai.'.pdf');
+        ])->loadView('certificate-layout', compact('training','pesertas','penandatangans', 'date', 'kategori'))->setPaper([0,0,940,665]);
+        $filename = $training->id.' '.$training->judul.' '.$date1->format('F j Y').'.pdf';
+        $training->filename = $filename;
+        $training->save();
+        Storage::put($filename, $pdf->output());
+        return redirect()->back()->with(['success' => $filename]);
+    }
+
+    public function download($filename){
+        // mendownload file yang tersimpan di 'storage/'
+        return response()->download(storage_path("app/{$filename}"));
     }
 }

@@ -11,15 +11,8 @@
 |
 */
 
-Route::get('/', 'HomeController@home');
-Route::get('/layout', function(){
-    $ttd = 3;
-    return view('try', compact('ttd'));
-});
+Route::get('/', 'HomeController@home')->name('home');
+Route::get('/list', 'HomeController@list')->name('list');
 Route::post('/submit','HomeController@input')->name('submit');
-Route::get('/download/{training_id}', 'PDFController@save')->name('download');
-// Route::get('/download', function() {
-//     $pdf = App::make('dompdf.wrapper');
-//     $pdf->loadView('welcome');
-//     return $pdf->setPaper([0,0,900,665])->download('sertif.pdf');
-// });
+Route::get('/generate/{training_id}', 'PDFController@generate')->name('generate');
+Route::get('/download/{filename}', 'PDFController@download')->name('download');
