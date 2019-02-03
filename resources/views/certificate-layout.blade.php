@@ -106,7 +106,7 @@
                 line-height: 1.35;
             }
             #completedContent{
-                font-size:19pt; 
+                font-size:18pt; 
                 font-family:'Open Sans';
                 margin: 0px;
                 text-align: center
