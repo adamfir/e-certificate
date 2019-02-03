@@ -31,6 +31,10 @@
                 font-family: 'Open Sans';
                 src: url("{{asset('fonts/OpenSans-Regular.ttf')}}") format('truetype');
             }
+            @font-face{
+                font-family: 'Open Sans Italic';
+                src: url("{{asset('fonts/OpenSans-Italic.ttf')}}") format('truetype');
+            }
             body{
                 margin: 0px;
             }
@@ -68,18 +72,16 @@
             .certifyPosition{
                 /* width: 500px; */
                 position: absolute;
-                top: 230px;
+                top: 220px;
                 left: 67px;
                 /* padding: 200px 0px 0px 492.5px;  */
                 text-align: center;
-                font-family:'Open Sans';
             }
             #certifyContent{
-                font-size:19pt; 
-                font-family:'Open Sans';
+                font-size:18pt; 
+                font-family:'Open Sans Italic';
                 margin: 0px;
                 text-align: center;
-                font-style: italic;
             }
             .namePosition{
                 position: absolute;
