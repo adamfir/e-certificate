@@ -103,7 +103,7 @@
                 left: 67px;
                 /* padding: 365px 0px 0px 460px; */
                 text-align: center;
-                line-height: 1.35;
+                line-height: 1;
             }
             #completedContent{
                 font-size:18pt; 
