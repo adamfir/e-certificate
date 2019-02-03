@@ -16,3 +16,6 @@ Route::get('/list', 'HomeController@list')->name('list');
 Route::post('/submit','HomeController@input')->name('submit');
 Route::get('/generate/{training_id}', 'PDFController@generate')->name('generate');
 Route::get('/download/{filename}', 'PDFController@download')->name('download');
+Route::get('/try', function(){
+    return view('try');
+});

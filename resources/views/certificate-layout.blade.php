@@ -23,6 +23,14 @@
                 font-size: normal;
                 src: url("{{asset('fonts/GrandHotel-Regular.ttf')}}") format('truetype');
             }
+            @font-face{
+                font-family: 'Calibri';
+                src: url("{{asset('fonts/Calibri.ttf')}}") format('truetype');
+            }
+            @font-face{
+                font-family: 'Open Sans';
+                src: url("{{asset('fonts/OpenSans-Regular.ttf')}}") format('truetype');
+            }
             body{
                 margin: 0px;
             }
@@ -63,13 +71,15 @@
                 top: 230px;
                 left: 67px;
                 /* padding: 200px 0px 0px 492.5px;  */
-                text-align: center
+                text-align: center;
+                font-family:'Open Sans';
             }
             #certifyContent{
                 font-size:19pt; 
-                font-family:"Calibri";
+                font-family:'Open Sans';
                 margin: 0px;
-                text-align: center
+                text-align: center;
+                font-style: italic;
             }
             .namePosition{
                 position: absolute;
@@ -95,7 +105,7 @@
             }
             #completedContent{
                 font-size:19pt; 
-                font-family:Calibri;
+                font-family:'Open Sans';
                 margin: 0px;
                 text-align: center
             }
@@ -122,7 +132,7 @@
             }
             #trainingContent{
                 font-size:18pt; 
-                font-family:Calibri;
+                font-family:'Open Sans';
                 margin: 0px;
                 text-align: center;
                 line-height: 1.35;
@@ -165,7 +175,7 @@
             }
             #TTDContent{
                 font-size:18pt; 
-                font-family:Calibri;
+                font-family:'Open Sans';
                 margin: 0px;
                 text-align: center
             }
@@ -192,7 +202,7 @@
                 <div class="certifyPosition">
                     <table style="width:1110px">
                         <td>
-                            <p id="certifyContent"><i>This is to certify that</i></p>
+                            <p id="certifyContent">This is to certify that</p>
                         </td>
                     </table>
                 </div>

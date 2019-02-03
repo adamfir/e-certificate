@@ -23,6 +23,18 @@
                 font-size: normal;
                 src: url("{{asset('fonts/GrandHotel-Regular.ttf')}}") format('truetype');
             }
+            @font-face {
+                /* font-family: 'OpenSans';
+                src: url({{ storage_path('fonts/OpenSans-Regular.ttf') }}) format("truetype"); */
+                font-family: 'Open Sans';
+                font-style: normal;
+                font-weight: normal;
+                src: url(http://themes.googleusercontent.com/static/fonts/opensans/v8/cJZKeOuBrn4kERxqtaUH3aCWcynf_cDxXwCLxiixG1c.ttf) format('truetype');
+            }
+            @font-face{
+                font-family: Calibri;
+                src: url({{storage_path('fonts/Calibri.ttf')}}) format('truetype');
+            }
             body{
                 margin: 0px;
             }
@@ -67,7 +79,7 @@
             }
             #certifyContent{
                 font-size:19pt; 
-                font-family:"Calibri";
+                font-family:Calibri;
                 margin: 0px;
                 text-align: center
             }
@@ -214,7 +226,7 @@
                     </td>
                 </table>
             </div>
-            @if ($ttd == 1)
+            {{-- @if ($ttd == 1) --}}
             <div class="TTD1Position">
                 <table style="width:1110px">
                     <td>
@@ -227,7 +239,7 @@
                     </td>
                 </table>
             </div>
-            @elseif($ttd == 2)
+            {{-- @elseif($ttd == 2)
             <div class="TTD2Position1">
                 <table style="width:515px">
                     <td>
@@ -289,7 +301,7 @@
                     </td>
                 </table>
             </div>
-            @endif
+            @endif --}}
         </div>
         {{-- <div style="page-break-before: always;"></div>
         <div style="page-break-after: always;"></div> --}}
